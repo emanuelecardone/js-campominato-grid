@@ -75,7 +75,10 @@ difficultyChoice.addEventListener('change', function(){
 const gameContainer = document.querySelector('.game_wrapper');
 
 // Evento click per scatenare il tutto
+// Up: rimuovo i bordi dal container principale al click, 
+// per fixare lo spazietto che si crea tra i suoi e quelli dei box
 playButton.addEventListener('click', function(){
+    gameContainer.classList.add('borders_fix');
     gameContainer.innerHTML = '';
     fillingGameUp(userDifficultyChoice);
 });

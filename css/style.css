@@ -33,7 +33,10 @@ main{
 .game_wrapper{
     width: 600px;
     height: 600px;
-    border: 2px solid black;
+    border: 1.5px solid black;
+}
+.game_wrapper.borders_fix{
+    border: none;
 }
 option.active{
     color: red;
@@ -51,7 +54,7 @@ option.active{
     height: calc(100% / 7);
 }
 .box{
-    border: 1px solid black;
+    border: 1.5px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
