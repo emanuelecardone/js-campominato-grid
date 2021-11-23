@@ -58,25 +58,22 @@ pageFooter.innerHTML = `
 const playButton = document.querySelector('.start_button');
 const difficultyChoice = document.querySelector('.form-select');
 
-let userWish = startGame(difficultyChoice);
-playButton.addEventListener('click', function(){
-    console.log(userWish);
+let userDifficultyChoice;
+
+difficultyChoice.addEventListener('change', function(){
+    if(difficultyChoice.value === "1"){
+        userDifficultyChoice = 'easy'
+        console.log(userDifficultyChoice);
+    } else if(difficultyChoice.value === "2"){
+        userDifficultyChoice = `medium`
+        console.log(userDifficultyChoice);
+    } else if(difficultyChoice.value === "3"){
+        userDifficultyChoice = `hard`;
+        console.log(userDifficultyChoice);
+    }
 });
-
-
-function startGame (difficultySelection){
     
-    let userDifficultyChoice;
-
-    difficultyChoice.addEventListener('change', function(){
-        if(difficultyChoice.value === "1"){
-            userDifficultyChoice = 'easy'
-        } else if(difficultyChoice.value === "2"){
-            userDifficultyChoice = `medium`
-        } else if(difficultyChoice.value === "3"){
-            userDifficultyChoice = `hard`;
-        }
-    });
-    
-    return userDifficultyChoice;
-}
+playButton.addEventListener('click', function(){
+    console.log(userDifficultyChoice);
+});
+  
