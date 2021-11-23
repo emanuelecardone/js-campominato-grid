@@ -55,25 +55,35 @@ pageFooter.innerHTML = `
 `;
 
 
+// Variabile tasto start
 const playButton = document.querySelector('.start_button');
+// Variabile select difficoltà
 const difficultyChoice = document.querySelector('.form-select');
-
+// Variabile per la scelta difficoltà
 let userDifficultyChoice;
-
+// Decisione della difficoltà da parte dell'utente
 difficultyChoice.addEventListener('change', function(){
     if(difficultyChoice.value === "1"){
-        userDifficultyChoice = 'easy'
-        console.log(userDifficultyChoice);
+        userDifficultyChoice = `easy`;
     } else if(difficultyChoice.value === "2"){
-        userDifficultyChoice = `medium`
-        console.log(userDifficultyChoice);
+        userDifficultyChoice = `medium`;
     } else if(difficultyChoice.value === "3"){
         userDifficultyChoice = `hard`;
-        console.log(userDifficultyChoice);
     }
 });
+
+function fillingGameUp (userDifficulty){
+
+    let numberOfBoxes;
+    if(userDifficulty === `easy`){
+        numberOfBoxes = 100;
+    } else if(userDifficulty === `medium`){
+        numberOfBoxes = 82
+    }
+ 
+    currentBox = document.createElement('div');
+
+}
     
-playButton.addEventListener('click', function(){
-    console.log(userDifficultyChoice);
-});
+
   
