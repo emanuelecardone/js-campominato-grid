@@ -70,11 +70,11 @@ function startGame (difficultySelection){
 
     difficultyChoice.addEventListener('change', function(){
         if(difficultyChoice.value === "1"){
-            userDifficultyChoice === 'easy'
+            userDifficultyChoice = 'easy'
         } else if(difficultyChoice.value === "2"){
-            userDifficultyChoice === `medium`
+            userDifficultyChoice = `medium`
         } else if(difficultyChoice.value === "3"){
-            userDifficultyChoice === `hard`;
+            userDifficultyChoice = `hard`;
         }
     });
     
