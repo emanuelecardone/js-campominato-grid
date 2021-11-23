@@ -80,7 +80,15 @@ playButton.addEventListener('click', function(){
     fillingGameUp(userDifficultyChoice);
 });
 
-// Funzione principale per inserimento box e numeri
+
+// FUNZIONI
+
+
+// Funzione principale per inserimento box e numeri nella griglia di gioco, con i relativi stili
+//
+// userDifficulty -> difficoltà scelta dall'utente. Sarà determinante per inquadrare il numero di box da generare
+//
+// return -> questa funzione non ritorna nulla, in quanto scatena semplicemente una serie di eventi
 function fillingGameUp (userDifficulty){
 
     let numberOfBoxes;
@@ -109,11 +117,19 @@ function fillingGameUp (userDifficulty){
 }
 
 // Funzione per assegnare la classe active ai box
+//
+// -> non ci sono argomenti in entrata
+//
+// -> non c'è return, questa funzione scatena semplicemente un evento
 function makeThemBlue() {
     this.classList.add('active');
 }
 
 // Funzione per generare un arrai di numeri diversi tra loro
+//
+// userDifficulty -> difficoltà scelta dall'utente. Determinante per capire quanti numeri devo generare
+//
+// return -> la funzione ritorna un array di numeri diversi tra loro, la quantità di numeri dipende dalla difficoltà scelta dall'utente
 function fillingBoxesUp(userDifficulty){
     let numbersArray = [];
     let numbersAmount;
