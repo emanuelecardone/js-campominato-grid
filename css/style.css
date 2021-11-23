@@ -1,0 +1,27 @@
+/* COMMON */
+.my_grey_bg{
+    background-color: #e9e9ed;
+}
+.my_grey_borders{
+    border: 2px solid #b5b5bf;
+}
+
+/* HEADER */
+.select_wrapper{
+    gap: .5rem;
+}
+
+
+/* MAIN */
+main{
+    height: calc(100vh - 145px);
+    background-color: #7fffd4;
+}
+.game_wrapper{
+    width: 600px;
+    height: 600px;
+    border: 2px solid black;
+}
+
+/* FOOTER */
+
