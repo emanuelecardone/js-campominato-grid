@@ -11,7 +11,17 @@
     gap: .5rem;
 }
 header h1{
-    font-size: 20px;
+    font-size: 15px;
+}
+.start_button{
+    font-size: .875rem;
+}
+.start_button:focus{
+    box-shadow: none;
+}
+.form-select:focus{
+    box-shadow: none;
+    border-color: #b5b5bf;
 }
 
 
@@ -55,6 +65,11 @@ option.active{
 
 /* MEDIA */
 /* Fix per l'h1 nell'header */
+@media screen and (min-width: 680px){
+    header h1{
+        font-size: 20px;
+    }
+}
 @media screen and (min-width: 1050px){
     header h1{
         font-size: 35px;
