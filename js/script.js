@@ -21,11 +21,11 @@ pageHeader.innerHTML = `
                 <div class="h-100 select_wrapper d-flex justify-content-end align-items-center">
                     <span>Difficoltà:</span>
                     <select class="form-select w-25 h_25p p-0 my_grey_borders my_grey_bg" aria-label="Default select example">
-                        <option value="1">Easy</option>
-                        <option value="2">Medium</option>
-                        <option value="3">Hard</option>
+                        <option id="easy" value="1">Easy</option>
+                        <option id="medium" value="2">Medium</option>
+                        <option id="hard" value="3">Hard</option>
                     </select>
-                    <button type="submit" class="w_75p h_25p d-flex justify-content-center align-items-center p-0 btn my_grey_borders my_grey_bg">Play</button>
+                    <button type="submit" class="start_button w_75p h_25p d-flex justify-content-center align-items-center p-0 btn my_grey_borders my_grey_bg">Play</button>
                 </div>
             </div>
         </div>
@@ -53,3 +53,30 @@ pageFooter.innerHTML = `
         </div>
     </div>
 `;
+
+
+const playButton = document.querySelector('.start_button');
+const difficultyChoice = document.querySelector('.form-select');
+
+let userWish = startGame(difficultyChoice);
+playButton.addEventListener('click', function(){
+    console.log(userWish);
+});
+
+
+function startGame (difficultySelection){
+    
+    let userDifficultyChoice;
+
+    difficultyChoice.addEventListener('change', function(){
+        if(difficultyChoice.value === "1"){
+            userDifficultyChoice === 'easy'
+        } else if(difficultyChoice.value === "2"){
+            userDifficultyChoice === `medium`
+        } else if(difficultyChoice.value === "3"){
+            userDifficultyChoice === `hard`;
+        }
+    });
+    
+    return userDifficultyChoice;
+}
