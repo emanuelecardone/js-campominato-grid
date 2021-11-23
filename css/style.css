@@ -42,9 +42,6 @@ main{
 .game_wrapper.borders_fix{
     border: none;
 }
-option.active{
-    color: red;
-}
 .easy{
     width: calc(10%);
     height: calc(10%);
