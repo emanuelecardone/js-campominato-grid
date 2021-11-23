@@ -134,7 +134,7 @@ function makeThemBlue() {
 //
 // return -> la funzione ritorna un array di numeri diversi tra loro, la quantità di numeri dipende dalla difficoltà scelta dall'utente
 function fillingBoxesUp(userDifficulty){
-    let numbersArray = [];
+    const numbersArray = [];
     let numbersAmount;
     
     if(userDifficulty === `easy`){

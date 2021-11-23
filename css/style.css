@@ -58,6 +58,7 @@ option.active{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .box.active{
     background-color: #6495ed;
