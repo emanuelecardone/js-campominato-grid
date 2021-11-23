@@ -14,7 +14,7 @@ pageHeader.innerHTML = `
             <div class="col">
                 <div class="left_header_wrapper d-flex align-items-center">
                     <img class="w_75p" src="img/logo.jpg" alt="Logo Boolean">
-                    <h1 class="d-inline-block fw-bold fs_35">Campo Minato: la Griglia</h1>
+                    <h1 class="d-inline-block fw-bold">Campo Minato: la Griglia</h1>
                 </div>
             </div>
             <div class="col">

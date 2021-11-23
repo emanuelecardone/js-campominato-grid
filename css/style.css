@@ -10,6 +10,9 @@
 .select_wrapper{
     gap: .5rem;
 }
+header h1{
+    font-size: 20px;
+}
 
 
 /* MAIN */
@@ -49,3 +52,11 @@ option.active{
 
 /* FOOTER */
 
+
+/* MEDIA */
+/* Fix per l'h1 nell'header */
+@media screen and (min-width: 1050px){
+    header h1{
+        font-size: 35px;
+    }
+}
