@@ -39,6 +39,12 @@ option.active{
 }
 .box{
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box.active{
+    background-color: #6495ed;
 }
 
 /* FOOTER */

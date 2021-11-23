@@ -92,7 +92,7 @@ function fillingGameUp (userDifficulty){
     } else if (userDifficulty === `hard`){
         numberOfBoxes = 49;
     }
-    
+    const numbersToUse = fillingBoxesUp(userDifficulty);
     for(let i = 0; i < numberOfBoxes; i++){
         currentBox = document.createElement('div');
         if(numberOfBoxes === 100){
@@ -103,7 +103,33 @@ function fillingGameUp (userDifficulty){
             currentBox.classList.add('hard', 'box');
         }
         gameContainer.appendChild(currentBox);
+        currentBox.innerHTML = numbersToUse[i];
+        currentBox.addEventListener('click', makeThemBlue);
     }
+}
+
+function makeThemBlue() {
+    this.classList.add('active');
+}
+
+function fillingBoxesUp(userDifficulty){
+    let numbersArray = [];
+    let numbersAmount;
+    
+    if(userDifficulty === `easy`){
+        numbersAmount = 100;
+    } else if(userDifficulty === `medium`){
+        numbersAmount = 81;
+    } else if (userDifficulty === `hard`){
+        numbersAmount = 49;
+    }
+    while(numbersArray.length < numbersAmount){
+        const currentNumber = Math.floor(Math.random() * numbersAmount) + 1;
+        if(!(numbersArray.includes(currentNumber))){
+            numbersArray.push(currentNumber);
+        }
+    }
+    return numbersArray;
 }
     
 
