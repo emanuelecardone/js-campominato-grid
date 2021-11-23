@@ -3,21 +3,25 @@
     background-color: #e9e9ed;
 }
 .my_grey_borders{
-    border: 2px solid #b5b5bf;
+    border: 1.5px solid #b5b5bf;
 }
 
 /* HEADER */
 .select_wrapper{
     gap: .5rem;
 }
-header h1{
-    font-size: 15px;
+header h1,
+header span{
+    display: none;
 }
 .start_button{
     font-size: .875rem;
 }
 .start_button:focus{
     box-shadow: none;
+}
+.form-select{
+    width: 100px;
 }
 .form-select:focus{
     box-shadow: none;
@@ -31,8 +35,8 @@ main{
     background-color: #7fffd4;
 }
 .game_wrapper{
-    width: 600px;
-    height: 600px;
+    width: 300px;
+    height: 300px;
     border: 1.5px solid black;
 }
 .game_wrapper.borders_fix{
@@ -68,14 +72,28 @@ option.active{
 
 
 /* MEDIA */
-/* Fix per l'h1 nell'header */
-@media screen and (min-width: 680px){
+/* Fix per l'header */
+@media screen and (min-width: 768px){
+    header h1,
+    header span{
+        display: block;
+    }
+    .form-select{
+        width: 200px;
+    }
     header h1{
         font-size: 20px;
     }
 }
-@media screen and (min-width: 1050px){
+@media screen and (min-width: 992px){
     header h1{
-        font-size: 35px;
+        font-size: 30px;
+    }
+}
+/* Fix per il wrapper del gioco */
+@media screen and (min-height: 750px){
+    .game_wrapper{
+        width: 600px;
+        height: 600px;
     }
 }

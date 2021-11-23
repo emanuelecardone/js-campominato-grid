@@ -20,12 +20,12 @@ pageHeader.innerHTML = `
             <div class="col">
                 <div class="h-100 select_wrapper d-flex justify-content-end align-items-center">
                     <span>Difficoltà:</span>
-                    <select class="form-select form-select-sm w-25 h_25p p-0 ps-1 my_grey_borders my_grey_bg fw-bold">
+                    <select class="form-select form-select-sm h_25p p-0 ps-1 my_grey_borders my_grey_bg fw-bold">
                         <option id="easy" value="1" selected="selected">Easy</option>
                         <option id="medium" value="2">Medium</option>
                         <option id="hard" value="3">Hard</option>
                     </select>
-                    <button type="submit" class="start_button w_75p h_25p d-flex justify-content-center align-items-center p-0 btn my_grey_borders my_grey_bg fw-bold">Play</button>
+                    <button type="submit" class="start_button w_85p h_25p d-flex justify-content-center align-items-center p-0 btn my_grey_borders my_grey_bg fw-bold">Play</button>
                 </div>
             </div>
         </div>
