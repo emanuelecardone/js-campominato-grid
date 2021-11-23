@@ -35,7 +35,7 @@ pageHeader.innerHTML = `
 // RIEMPIMENTO MAIN (SOLO GRIGLIA VUOTA)
 const pageMain = document.querySelector(`main`);
 pageMain.innerHTML = `
-    <div class="game_wrapper">
+    <div class="game_wrapper d-flex flex-wrap">
 
     </div>
 `;
@@ -71,18 +71,32 @@ difficultyChoice.addEventListener('change', function(){
         userDifficultyChoice = `hard`;
     }
 });
+// Variabile per contenitore dei box
+const gameContainer = document.querySelector('.game_wrapper');
 
 function fillingGameUp (userDifficulty){
 
     let numberOfBoxes;
+
     if(userDifficulty === `easy`){
         numberOfBoxes = 100;
     } else if(userDifficulty === `medium`){
-        numberOfBoxes = 82
+        numberOfBoxes = 81;
+    } else if (userDifficulty === `hard`){
+        numberOfBoxes = 49;
     }
- 
-    currentBox = document.createElement('div');
-
+    
+    for(let i = 0; i < numberOfBoxes; i++){
+        currentBox = document.createElement('div');
+        if(numberOfBoxes === 100){
+            currentBox.classList.add('easy', 'box');
+        } else if(numberOfBoxes === 81){
+            currentBox.classList.add('medium', 'box');
+        } else if(numberOfBoxes === 49){
+            currentBox.classList.add('hard', 'box');
+        }
+        gameContainer.innerHTML += currentBox;
+    }
 }
     
 
