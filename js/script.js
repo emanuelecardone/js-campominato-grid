@@ -74,6 +74,13 @@ difficultyChoice.addEventListener('change', function(){
 // Variabile per contenitore dei box
 const gameContainer = document.querySelector('.game_wrapper');
 
+
+playButton.addEventListener('click', function(){
+    gameContainer.innerHTML = '';
+    fillingGameUp(userDifficultyChoice);
+});
+
+
 function fillingGameUp (userDifficulty){
 
     let numberOfBoxes;
@@ -95,7 +102,7 @@ function fillingGameUp (userDifficulty){
         } else if(numberOfBoxes === 49){
             currentBox.classList.add('hard', 'box');
         }
-        gameContainer.innerHTML += currentBox;
+        gameContainer.appendChild(currentBox);
     }
 }
     
