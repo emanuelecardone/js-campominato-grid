@@ -21,7 +21,7 @@ pageHeader.innerHTML = `
                 <div class="h-100 select_wrapper d-flex justify-content-end align-items-center">
                     <span>Difficoltà:</span>
                     <select class="form-select w-25 h_25p p-0 my_grey_borders my_grey_bg" aria-label="Default select example">
-                        <option id="easy" value="1">Easy</option>
+                        <option id="easy" value="1" selected="selected">Easy</option>
                         <option id="medium" value="2">Medium</option>
                         <option id="hard" value="3">Hard</option>
                     </select>
@@ -59,8 +59,8 @@ pageFooter.innerHTML = `
 const playButton = document.querySelector('.start_button');
 // Variabile select difficoltà
 const difficultyChoice = document.querySelector('.form-select');
-// Variabile per la scelta difficoltà
-let userDifficultyChoice;
+// Variabile per la scelta difficoltà (do easy di default poiché easy è selected di default)
+let userDifficultyChoice = `easy`;
 // Decisione della difficoltà da parte dell'utente
 difficultyChoice.addEventListener('change', function(){
     if(difficultyChoice.value === "1"){
@@ -74,13 +74,13 @@ difficultyChoice.addEventListener('change', function(){
 // Variabile per contenitore dei box
 const gameContainer = document.querySelector('.game_wrapper');
 
-
+// Evento click per scatenare il tutto
 playButton.addEventListener('click', function(){
     gameContainer.innerHTML = '';
     fillingGameUp(userDifficultyChoice);
 });
 
-
+// Funzione principale per inserimento box e numeri
 function fillingGameUp (userDifficulty){
 
     let numberOfBoxes;
@@ -108,10 +108,12 @@ function fillingGameUp (userDifficulty){
     }
 }
 
+// Funzione per assegnare la classe active ai box
 function makeThemBlue() {
     this.classList.add('active');
 }
 
+// Funzione per generare un arrai di numeri diversi tra loro
 function fillingBoxesUp(userDifficulty){
     let numbersArray = [];
     let numbersAmount;
