@@ -63,12 +63,17 @@ const difficultyChoice = document.querySelector('.form-select');
 let userDifficultyChoice = `easy`;
 // Decisione della difficoltà da parte dell'utente
 difficultyChoice.addEventListener('change', function(){
-    if(difficultyChoice.value === "1"){
-        userDifficultyChoice = `easy`;
-    } else if(difficultyChoice.value === "2"){
-        userDifficultyChoice = `medium`;
-    } else if(difficultyChoice.value === "3"){
-        userDifficultyChoice = `hard`;
+    switch(difficultyChoice.value){
+        case  '1':
+            userDifficultyChoice = `easy`;
+            break;
+        case '2':
+            userDifficultyChoice = `medium`;
+            break;
+        case '3':
+            userDifficultyChoice = `hard`;
+            break;
+
     }
 });
 // Variabile per contenitore dei box
@@ -95,23 +100,31 @@ playButton.addEventListener('click', function(){
 function fillingGameUp (userDifficulty){
 
     let numberOfBoxes;
-
-    if(userDifficulty === `easy`){
-        numberOfBoxes = 100;
-    } else if(userDifficulty === `medium`){
-        numberOfBoxes = 81;
-    } else if (userDifficulty === `hard`){
-        numberOfBoxes = 49;
+    switch(userDifficulty){
+        case `easy`:
+            numberOfBoxes = 100;
+            break;
+        case `medium`:
+            numberOfBoxes = 81;
+            break;
+        case `hard`:
+            numberOfBoxes = 49;
+            break;
     }
+
     const numbersToUse = fillingBoxesUp(userDifficulty);
     for(let i = 0; i < numberOfBoxes; i++){
         currentBox = document.createElement('div');
-        if(numberOfBoxes === 100){
-            currentBox.classList.add('easy', 'box');
-        } else if(numberOfBoxes === 81){
-            currentBox.classList.add('medium', 'box');
-        } else if(numberOfBoxes === 49){
-            currentBox.classList.add('hard', 'box');
+        switch(numberOfBoxes){
+            case 100:
+                currentBox.classList.add('easy', 'box');
+                break;
+            case 81:
+                currentBox.classList.add('medium', 'box');
+                break;
+            case 49:
+                currentBox.classList.add('hard', 'box');
+                break;
         }
         gameContainer.appendChild(currentBox);
         currentBox.innerHTML = numbersToUse[i];
@@ -136,14 +149,18 @@ function makeThemBlue() {
 function fillingBoxesUp(userDifficulty){
     const numbersArray = [];
     let numbersAmount;
-    
-    if(userDifficulty === `easy`){
-        numbersAmount = 100;
-    } else if(userDifficulty === `medium`){
-        numbersAmount = 81;
-    } else if (userDifficulty === `hard`){
-        numbersAmount = 49;
+    switch(userDifficulty){
+        case `easy`:
+            numbersAmount = 100;
+            break;
+        case `medium`:
+            numbersAmount = 81;
+            break;
+        case `hard`:
+            numbersAmount = 49;
+            break;
     }
+
     while(numbersArray.length < numbersAmount){
         const currentNumber = Math.floor(Math.random() * numbersAmount) + 1;
         if(!(numbersArray.includes(currentNumber))){
